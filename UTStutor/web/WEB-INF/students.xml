@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8">
+
+<students>
+    <student>
+        <email>ryan@ryanheise.com</email>
+        <name>Ryan Heise</name>
+        <password>blahblah</password>
+        <DOB>08/08/1998</DOB>
+    </student>
+    <student>
+        <email>joe@bloggs.com</email>
+        <name>Joe Bloggs</name>
+        <password>passoword</password>
+        <DOB>01/01/2000</DOB>
+    </student>
+</students>

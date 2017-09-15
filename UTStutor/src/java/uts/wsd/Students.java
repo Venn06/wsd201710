@@ -13,10 +13,11 @@ import javax.xml.bind.annotation.*;
  *
  * @author Vennwen
  */
-@XmlRootElement(name = "users")
+
+@XmlRootElement(name = "students")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Students implements Serializable{
-    @XmlElement(name = "user")
+    @XmlElement(name = "student")
     private ArrayList<Student> list;
     
     public Students(){
