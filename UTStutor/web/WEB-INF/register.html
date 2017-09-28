@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>register.jsp</title>
+    </head>
+    <body>
+        
+        <h1>Register</h1>
+    
+        <form action="welcome.jsp" method="post">
+            <table>
+       <tbody><tr>
+
+       <tr>
+<td><label for="Fullname">Full name</label></td>
+<td><input name="name" type="text" value=""></td>
+</tr>
+
+<td><label for="email">Email [Username]</label></td>
+<td><input name="email" type="text" value=""></td>
+</tr>
+       <tr>
+<td><label for="Password">Password</label></td>
+<td><input name="password" type="password" value=""></td>
+</tr>
+
+<td><label for="DOB">Date of Birth (DOB)</label></td>
+<td><input name="DOB" type="DOB" value=""></td>
+</tr>
+<td><label for="UserType">User Type</label></td>
+<td>
+<select>
+  <option value="Student">Student</option>
+  <option value="saab">Tutor</Tutor>
+
+</select>
+</tr>
+<td><label for="Speciality(if tutor)">Speciality (if tutor)</label></td>
+<td>
+<select>
+  <option value="N/A">N/A</option>
+  <option value="WSD">WSD</option>
+  <option value="USP">USP</option>
+  <option value="SEP">SEP</option>
+  <option value="AppProg">AppProg</option>
+  <option value="MobileApp">MobileApp</option>
+ 
+
+</select> 
+
+       <tr>
+<td><label for="AgreetoTOS">Agree to TOS</label></td>
+<td><input name="tos" type="checkbox" value="true"></td>
+</tr>
+       <tr>
+<td><label for=""></label></td>
+<td><input name="submit" type="submit" value="Register"></td>
+</tr>
+      </tbody></table>
+        </form>
+    </body>
+</html>
