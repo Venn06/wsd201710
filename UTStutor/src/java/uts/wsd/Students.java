@@ -53,4 +53,9 @@ public class Students implements Serializable{
         }
         return null;
     }
+
+    
+    public void removeStudent(String email){
+        list.remove(this.getStudent(email));
+    }
 }

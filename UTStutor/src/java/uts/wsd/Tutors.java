@@ -7,6 +7,7 @@ package uts.wsd;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.*;
 
 
@@ -44,6 +45,30 @@ public class Tutors implements Serializable{
         }
         return null;
     }
+    
+    public ArrayList<Tutor> searchTutors(String email, String name, String DOB, String subject, String status){
+        ArrayList<Tutor> tutors = new ArrayList<Tutor>();
+        for(Tutor tutor: list){
+            if(email != null && !tutor.getEmail().equals(email)){
+                continue;
+            }
+            if(name != null && !tutor.getName().equals(name)){
+                continue;
+            }
+            if(DOB != null && !tutor.getDOB().equals(DOB)){
+                continue;
+            }
+            if(subject != null && !tutor.getSubject().equals(subject)){
+                continue;
+            }
+            if(status != null && !tutor.getStatus().equals(status)){
+                continue;
+            }
+            tutors.add(tutor);
+        }
+        return tutors;
+    }
+   
     
     public Tutor login(String email, String password){
         for(Tutor tutor: list){

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8">
-
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <students>
     <student>
         <email>ryan@ryanheise.com</email>
@@ -10,7 +9,7 @@
     <student>
         <email>joe@bloggs.com</email>
         <name>Joe Bloggs</name>
-        <password>passoword</password>
+        <password>password</password>
         <DOB>01/01/2000</DOB>
     </student>
 </students>

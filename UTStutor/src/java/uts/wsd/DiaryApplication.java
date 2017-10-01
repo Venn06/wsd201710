@@ -16,7 +16,7 @@ import javax.xml.bind.*;
  *
  * @author Vennwen
  */
-public class Applicaion implements Serializable{
+public class DiaryApplication implements Serializable{
     private String bookingsPath;
     private String studentsPath;
     private String tutorsPath;
@@ -24,11 +24,23 @@ public class Applicaion implements Serializable{
     private Students students;
     private Tutors tutors;
 
+    
+    public DiaryApplication(){
+    
+    }
+    
+    public void setAllPath(String bookingsPath, String studentsPath, String tutorsPath) throws JAXBException, IOException{
+        setBookingsPath(bookingsPath);
+        setStudentsPath(studentsPath);
+        setTutorsPath(tutorsPath);
+    }
+    
     public String getBookingsPath() {
         return bookingsPath;
     }
 
     public void setBookingsPath(String bookingsPath) throws JAXBException, FileNotFoundException, IOException {
+        System.out.println("Setting bookingsPath: "+ bookingsPath);
         this.bookingsPath = bookingsPath;
         // Create the unmarshaller
         JAXBContext jc = JAXBContext.newInstance(Bookings.class);
@@ -44,6 +56,7 @@ public class Applicaion implements Serializable{
     }
 
     public void setStudentsPath(String studentsPath) throws JAXBException, FileNotFoundException, IOException {
+        System.out.println("Setting studentsPath: "+ studentsPath);
         this.studentsPath = studentsPath;
         
         // Create the unmarshaller
@@ -51,7 +64,7 @@ public class Applicaion implements Serializable{
         Unmarshaller u = jc.createUnmarshaller();
         // Now unmarshal the object from the file
         FileInputStream fin = new FileInputStream(studentsPath);
-        setStudents((Students)u.unmarshal(fin)); // This loads the "bookings" object
+        setStudents((Students)u.unmarshal(fin)); // This loads the "students" object
         fin.close();
     }
 
@@ -66,7 +79,7 @@ public class Applicaion implements Serializable{
         Unmarshaller u = jc.createUnmarshaller();
         // Now unmarshal the object from the file
         FileInputStream fin = new FileInputStream(tutorsPath);
-        setTutors((Tutors)u.unmarshal(fin)); // This loads the "bookings" object
+        setTutors((Tutors)u.unmarshal(fin)); // This loads the "tutors" object
         fin.close();
     }
 
@@ -113,5 +126,43 @@ public class Applicaion implements Serializable{
         Marshaller m = jc.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         m.marshal(this.getBookings(), new  FileOutputStream(bookingsPath));
+    }
+    
+    public void addTutor(Tutor tutor) throws JAXBException, PropertyException, FileNotFoundException{
+        tutors.addTutor(tutor);
+        this.updateTutorsXML();
+    }
+    public void addStudent(Student student) throws JAXBException, PropertyException, FileNotFoundException{
+        students.addStudent(student);
+        this.updateStudentsXML();
+    }
+    
+    public void addBooking(String tutorEmail, String studentEmail) throws JAXBException, PropertyException, FileNotFoundException{
+        Tutor tutor = this.tutors.getTutor(tutorEmail);
+        Student student = this.students.getStudent(studentEmail);
+        
+        if(tutor != null && student!= null && tutor.getStatus().equals("available")){
+            this.bookings.addBooking(tutor, student);
+        }
+        this.updateBookingsXML();
+        this.updateTutorsXML();
+    }
+    
+    public void cancelBooking(int bookingID) throws JAXBException, PropertyException, FileNotFoundException{
+        if(bookings.getBooking(bookingID) != null){
+            this.bookings.cancelBooking(bookingID);
+            this.tutors.getTutor(bookings.getBooking(bookingID).getTutorEmail()).setStatus("available");
+            this.updateBookingsXML();
+            this.updateTutorsXML();
+        }
+    }
+    
+    public void completeBooking(int bookingID) throws JAXBException, PropertyException, FileNotFoundException{
+        if(bookings.getBooking(bookingID) != null){
+            this.bookings.completeBooking(bookingID);
+            this.tutors.getTutor(bookings.getBooking(bookingID).getTutorEmail()).setStatus("available");
+            this.updateBookingsXML();
+            this.updateTutorsXML();
+        }
     }
 }

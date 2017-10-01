@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.*;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement
-public class Tutor implements Serializable{
+public class Tutor extends User implements Serializable{
 
     @XmlElement
     private String email;
@@ -29,12 +29,21 @@ public class Tutor implements Serializable{
     }
     
     public Tutor(String email, String name, String password, String DOB, String subject, String status) {
-        this.name = email;
-        this.email = name;
+        this.email = email;
+        this.name = name;
         this.password = password;
         this.DOB = DOB;
         this.subject = subject;
         this.status = status;
+    }
+    
+        public Tutor(String email, String name, String password, String DOB, String subject) {
+        this.email = email;
+        this.name = name;
+        this.password = password;
+        this.DOB = DOB;
+        this.subject = subject;
+        this.status = "available";
     }
 
     public String getName() {
@@ -84,6 +93,14 @@ public class Tutor implements Serializable{
     public void setStatus(String status) {
         this.status = status;
     }
+
     
+    public UserType getType() {
+        return UserType.Tutor;
+    }
+    
+    public String[] getDetails(){
+        return new String[] {"Email", this.email, "Name", this.name,"Password", this.password, "DOB", this.DOB, "Subject", this.subject, "Status", this.status};
+    }
 
 }

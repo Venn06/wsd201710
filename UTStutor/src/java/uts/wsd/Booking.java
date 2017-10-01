@@ -6,6 +6,8 @@
 package uts.wsd;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -15,8 +17,11 @@ import javax.xml.bind.annotation.*;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Booking implements Serializable{
+    
+    @XmlAttribute
+    private int id;
+    
     @XmlElement
-    private int bookingID;
     private String tutorEmail;
     private String tutorName;
     private String subjectName;
@@ -24,8 +29,10 @@ public class Booking implements Serializable{
     private String studentName;
     private String status;
 
+    public Booking(){}
+    
     public Booking(int bookingID, String tutorEmail, String tutorName, String subjectName, String studentEmail, String studentName, String status) {
-        this.bookingID = bookingID;
+        this.id = bookingID;
         this.tutorEmail = tutorEmail;
         this.tutorName = tutorName;
         this.subjectName = subjectName;
@@ -34,12 +41,32 @@ public class Booking implements Serializable{
         this.status = status;
     }
 
+    Booking(int id, Tutor tutor, Student student) {
+        this.id = id;
+        this.tutorEmail = tutor.getEmail();
+        this.tutorName = tutor.getName();
+        this.subjectName = tutor.getSubject();
+        this.studentEmail = student.getEmail();
+        this.studentName = student.getName();
+        this.status = "active";
+        tutor.setStatus("unavailable");
+        
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getBookingID() {
-        return bookingID;
+        return id;
     }
 
     public void setBookingID(int bookingID) {
-        this.bookingID = bookingID;
+        this.id = bookingID;
     }
 
     public String getTutorEmail() {

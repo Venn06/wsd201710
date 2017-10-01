@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookings>
+    <booking id="0">
+        <tutorEmail>tutorEmail</tutorEmail>
+        <tutorName>tutorName</tutorName>
+        <subjectName>subjectName</subjectName>
+        <studentEmail>studentEmail</studentEmail>
+        <studentName>studentName</studentName>
+        <status>status</status>
+    </booking>
+</bookings>

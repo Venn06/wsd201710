@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+
+
+
+
+
+
+
+<page title="Booking" h1="Welcome,Student Joe Bloggs">
+    <bookings>
+        
+
+        <booking>
+            <tutorEmail>2@2.com</tutoremail>
+            <tutorName>tutor2</tutorname>
+            <subjectName>WSD</subjectname>  
+            <studentEmail>joe@bloggs.com</studentemail>
+            <studentName>Joe Bloggs</studentname>
+            <status>Not Booked yet</status>
+            <action status="notbooked" tutorEmail="2@2.com"></action>
+        </booking>
+
+        
+        <booking>
+            <tutorEmail>2@2.com</tutorEmail>
+            <tutorName>tutor2</tutorName>
+            <subjectName>WSD</subjectName>
+            <studentEmail>joe@bloggs.com</studentEmail>
+            <studentName>Joe Bloggs</studentName>
+            <status>completed</status>
+            <action bookingID="1" status="completed" studentEmail="joe@bloggs.com" tutorEmail="2@2.com" userType="Student">completed</action>                
+        </booking>
+
+
+        
+        <booking>
+            <tutorEmail>1@1.com</tutorEmail>
+            <tutorName>tutor1</tutorName>
+            <subjectName>WSD</subjectName>
+            <studentEmail>joe@bloggs.com</studentEmail>
+            <studentName>Joe Bloggs</studentName>
+            <status>cancelled</status>
+            <action bookingID="2" status="cancelled" studentEmail="joe@bloggs.com" tutorEmail="1@1.com" userType="Student">cancelled</action>                
+        </booking>
+
+
+        
+    </bookings>
+    <link page="main"/>
+</page>
+

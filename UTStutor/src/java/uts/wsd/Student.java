@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.*;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Student implements Serializable{
+public class Student extends User implements Serializable{
     @XmlElement
     private String email;
     private String name;
@@ -60,8 +60,17 @@ public class Student implements Serializable{
         return DOB;
     }
 
+    @Override
     public void setDOB(String DOB) {
         this.DOB = DOB;
     }
+
+ 
+    public UserType getType() {
+        return UserType.Student;
+    }
     
+    public String[] getDetails(){
+        return new String[] {"Email", this.email, "Name", this.name,"Password", this.password, "DOB", this.DOB};
+    }
 }

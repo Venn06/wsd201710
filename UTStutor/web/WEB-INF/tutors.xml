@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="UTF-8">
+<?xml version="1.0" encoding="UTF-8"?>
 <tutors>
     <tutor>
-        <email>first tutor</email>
-        <name>1@1.com</name>
+        <email>tutor1@uts.com</email>
+        <name>tutor1</name>
         <password>password1</password>
-        <DOB>01/01/1900</DOB>
+        <DOB>2017-10-04</DOB>
         <subject>WSD</subject>
-        <status>availble</status>
+        <status>available</status>
     </tutor>
     <tutor>
-        <email>second tutor</email>
-        <name>2@2.com</name>
+        <email>tutor2@uts.com</email>
+        <name>tutor2</name>
         <password>password2</password>
-        <DOB>02/02/1900</DOB>
-        <subject>WSD</subject>
-        <status>availble</status>
+        <DOB>2017-10-04</DOB>
+        <subject>USP</subject>
+        <status>available</status>
     </tutor>
 </tutors>
