@@ -49,19 +49,19 @@ public class Tutors implements Serializable{
     public ArrayList<Tutor> searchTutors(String email, String name, String DOB, String subject, String status){
         ArrayList<Tutor> tutors = new ArrayList<Tutor>();
         for(Tutor tutor: list){
-            if(email != null && !tutor.getEmail().equals(email)){
+            if(email != null && !email.equals("")&& !tutor.getEmail().equals(email)){
                 continue;
             }
-            if(name != null && !tutor.getName().equals(name)){
+            if(name != null && !tutor.getName().equals("") &&!tutor.getName().equals(name)){
                 continue;
             }
-            if(DOB != null && !tutor.getDOB().equals(DOB)){
+            if(DOB != null && !tutor.getDOB().equals("") && !tutor.getDOB().equals(DOB)){
                 continue;
             }
-            if(subject != null && !tutor.getSubject().equals(subject)){
+            if(subject != null && !tutor.getSubject().equals("") && !tutor.getSubject().equals(subject)){
                 continue;
             }
-            if(status != null && !tutor.getStatus().equals(status)){
+            if(status != null && !tutor.getStatus().equals("") &&!tutor.getStatus().equals(status)){
                 continue;
             }
             tutors.add(tutor);
@@ -78,4 +78,9 @@ public class Tutors implements Serializable{
         }
         return null;
     }
+    
+    public void removeTutor(String email){
+        list.remove(this.getTutor(email));
+    }
+    
 }

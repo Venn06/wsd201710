@@ -18,8 +18,7 @@
     
     <xsl:template match="page">
         <html>
-            <head>
-                
+            <head>           
                 <title>
                     <xsl:value-of select="@title"/>
                 </title>
@@ -121,6 +120,7 @@
             <xsl:apply-templates/>
         </td>
     </xsl:template>
+    
     <xsl:template match="tutor/status">
         <xsl:choose>
             <xsl:when test="@value='available'">
@@ -171,7 +171,7 @@
             </xsl:when>
             <xsl:when test="@status='active' and @userType='Student'">
                 <td>
-                    <a href="booking.jsp?action=complete&amp;bookingID={@bookingID}">Complete</a><br/>
+                    <a href="booking.jsp?action=cancel&amp;bookingID={@bookingID}">Cancel</a><br/>                    
                 </td>
             </xsl:when>            
         </xsl:choose>

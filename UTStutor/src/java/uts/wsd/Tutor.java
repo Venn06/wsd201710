@@ -102,5 +102,6 @@ public class Tutor extends User implements Serializable{
     public String[] getDetails(){
         return new String[] {"Email", this.email, "Name", this.name,"Password", this.password, "DOB", this.DOB, "Subject", this.subject, "Status", this.status};
     }
+    
 
 }

@@ -10,6 +10,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.*;
 
 /**
@@ -137,7 +140,7 @@ public class DiaryApplication implements Serializable{
         this.updateStudentsXML();
     }
     
-    public void addBooking(String tutorEmail, String studentEmail) throws JAXBException, PropertyException, FileNotFoundException{
+    public void addBooking(String tutorEmail, String studentEmail) throws JAXBException, FileNotFoundException, PropertyException{
         Tutor tutor = this.tutors.getTutor(tutorEmail);
         Student student = this.students.getStudent(studentEmail);
         
@@ -164,5 +167,29 @@ public class DiaryApplication implements Serializable{
             this.updateBookingsXML();
             this.updateTutorsXML();
         }
+    }
+    
+    public void removeStudent(String email) throws JAXBException, FileNotFoundException, PropertyException{
+        students.removeStudent(email);
+        this.updateStudentsXML();
+        this.updateTutorsXML();
+    }
+    
+    public void removeTutor(String email) throws JAXBException, PropertyException, FileNotFoundException{
+        ArrayList<Booking> relatedBookings = bookings.searchBookings(
+                -1, 
+                email,
+                null,
+                null,
+                null,
+                null,
+                null);
+        for(Booking booking : relatedBookings){
+            if(booking.getStatus().equals("active")){
+                booking.setStatus("cancelled");
+            }
+        }
+        this.updateBookingsXML();
+        this.updateTutorsXML();
     }
 }

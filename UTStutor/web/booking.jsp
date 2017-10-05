@@ -34,13 +34,7 @@
                         diaryApp.cancelBooking(bookingID);
                     }
                 }
-                if (action != null && action.equals("complete") && request.getParameter("bookingID") != null) {
-                    int bookingID = Integer.parseInt(request.getParameter("bookingID"));
-                    if (diaryApp.getBookings().getBooking(bookingID) != null
-                            && diaryApp.getBookings().getBooking(bookingID).getStudentEmail().equals(user.getEmail())) {
-                        diaryApp.completeBooking(bookingID);
-                    }
-                }                
+                
                 if (action != null && action.equals("create")) {
                     diaryApp.addBooking(request.getParameter("tutorEmail"), user.getEmail());
                 }
@@ -95,8 +89,8 @@
             <tutorEmail><%=booking.getTutorEmail()%></tutorEmail>
             <tutorName><%=booking.getTutorName()%></tutorName>
             <subjectName><%=booking.getSubjectName()%></subjectName>
-            <studentEmail><%=booking.getStudentEmail()%></studentEmail>
             <studentName><%=booking.getStudentName()%></studentName>
+            <studentEmail><%=booking.getStudentEmail()%></studentEmail>
             <status><%=booking.getStatus()%></status>
             <action bookingID="<%=booking.getBookingID()%>" status="<%=booking.getStatus()%>" studentEmail="<%=booking.getStudentEmail()%>" tutorEmail="<%=booking.getTutorEmail()%>" userType="<%=user.getType()%>"><%=booking.getStatus()%></action>                
         </booking>

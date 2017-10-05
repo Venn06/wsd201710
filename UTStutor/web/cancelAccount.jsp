@@ -19,10 +19,14 @@
 <%
     
     User user = (User) session.getAttribute("user");
-    if(user.getType() == UserType.Student){
-        Students students = diaryApp.getStudents();
-        students.removeStudent(user.getEmail());
-        diaryApp.updateStudentsXML();
+    if(user != null){
+        if(user.getType() == UserType.Student){
+            diaryApp.removeStudent(user.getEmail());
+        }
+        else if(user.getType() == UserType.Tutor){
+            diaryApp.removeTutor(user.getEmail());
+        }
+        
 %>
 <page title="Cancel Account" h1="Your account has been cancelled">
     <link page="index"/>

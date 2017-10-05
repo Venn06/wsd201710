@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "students")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Students implements Serializable{
+public class Students implements StudentsDAO, Serializable{
     @XmlElement(name = "student")
     private ArrayList<Student> list;
     
@@ -32,6 +32,7 @@ public class Students implements Serializable{
         this.list = list;
     }
     
+    @Override    
     public void addStudent(Student student){
         list.add(student);
     }
