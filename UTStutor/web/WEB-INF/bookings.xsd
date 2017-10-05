@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:simpleType name="email">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Za-z0-9\.]+@[a-z\-]+(\.[a-z]+)+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="name">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z][a-z]+( [A-Z][a-z]+)*"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="subject">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]*[a-z]*"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="status">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-z]*"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Element Declarations -->
+    <xs:element name="bookings">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="booking" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="tutorEmail" type="email"/>
+                            <xs:element name="tutorName" type="name"/>
+                            <xs:element name="subjectName" type="subject"/>
+                            <xs:element name="studentEmail" type="email"/>
+                            <xs:element name="studentName" type="name"/>
+                            <xs:element name="status" type="status"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
