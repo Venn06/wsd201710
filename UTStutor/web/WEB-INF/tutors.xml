@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tutors>
+<tutors
+    xmlns="http://www.uts.edu.au/31284/wsd-tutors"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-tutors tutors.xsd"
+>
     <tutor>
         <email>tutor1@uts.com</email>
-        <name>tutor1</name>
+        <name>Tutor Aa</name>
         <password>password1</password>
         <DOB>2017-10-04</DOB>
         <subject>WSD</subject>
@@ -10,7 +14,7 @@
     </tutor>
     <tutor>
         <email>tutor2@uts.com</email>
-        <name>tutor2</name>
+        <name>Tutor Bb</name>
         <password>password2</password>
         <DOB>2017-10-04</DOB>
         <subject>USP</subject>

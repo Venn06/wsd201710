@@ -30,7 +30,7 @@
                 if (action != null && action.equals("cancel") && request.getParameter("bookingID") != null) {
                     int bookingID = Integer.parseInt(request.getParameter("bookingID"));
                     if (diaryApp.getBookings().getBooking(bookingID) != null
-                            && diaryApp.getBookings().getBooking(bookingID).getStudentEmail().equals(user.getEmail())) {
+                            && diaryApp.getBookings().getBooking(bookingID).getStudentEmail().equals(user.getEmail())) {    
                         diaryApp.cancelBooking(bookingID);
                     }
                 }

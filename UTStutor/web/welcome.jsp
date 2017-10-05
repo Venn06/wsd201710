@@ -25,6 +25,7 @@
     String error = null;
     Students students = diaryApp.getStudents();
     Tutors tutors = diaryApp.getTutors();
+    XMLValidation xv = new XMLValidation();
     if(email == null){
         error = "The email is null";
     }
@@ -44,7 +45,10 @@
     else if(students.getStudent(email) != null || tutors.getTutor(email) != null){
         error = "The email has been used";
     }
-    if(error == null){
+    else{
+        error = xv.validationAll(email, name, password);
+    }
+    if(error == null || (error != null && error.equals("")) ){
         if(UserType.equals("Student")){
             Student student = new Student(email,name,password,DOB);
             students.addStudent(student);

@@ -5,9 +5,12 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 
-<xs:schema version="1.0"
-           xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           elementFormDefault="qualified">
+<xs:schema  
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.uts.edu.au/31284/wsd-bookings"
+    xmlns="http://www.uts.edu.au/31284/wsd-bookings"
+    elementFormDefault="qualified"
+>
     <xs:simpleType name="email">
         <xs:restriction base="xs:string">
             <xs:pattern value="[A-Za-z0-9\.]+@[a-z\-]+(\.[a-z]+)+"/>
@@ -33,7 +36,7 @@ and open the template in the editor.
     <xs:element name="bookings">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="booking" maxOccurs="unbounded">
+                <xs:element name="booking" maxOccurs="unbounded" >
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="tutorEmail" type="email"/>
@@ -43,8 +46,10 @@ and open the template in the editor.
                             <xs:element name="studentName" type="name"/>
                             <xs:element name="status" type="status"/>
                         </xs:sequence>
+                        <xs:attribute name="id" type="xs:int"/>
                     </xs:complexType>
                 </xs:element>
+                
             </xs:sequence>
         </xs:complexType>
     </xs:element>

@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<students>
+
+<students
+    xmlns="http://www.uts.edu.au/31284/wsd-students"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-students students.xsd"
+>
     <student>
         <email>ryan@ryanheise.com</email>
         <name>Ryan Heise</name>
         <password>blahblah</password>
-        <DOB>08/08/1998</DOB>
+        <DOB>2017-10-04</DOB>
     </student>
     <student>
         <email>joe@bloggs.com</email>
         <name>Joe Bloggs</name>
         <password>password</password>
-        <DOB>01/01/2000</DOB>
+        <DOB>2017-10-04</DOB>
     </student>
 </students>

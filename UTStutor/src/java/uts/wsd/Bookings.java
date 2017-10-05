@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.*;
  * @author Vennwen
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name = "bookings")
+@XmlRootElement(name = "bookings", namespace="http://www.uts.edu.au/31284/wsd-bookings")
 public class Bookings implements Serializable {
 
     @XmlElement(name = "booking")

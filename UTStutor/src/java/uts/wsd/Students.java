@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.*;
  * @author Vennwen
  */
 
-@XmlRootElement(name = "students")
+@XmlRootElement(name = "students", namespace="http://www.uts.edu.au/31284/wsd-students")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Students implements StudentsDAO, Serializable{
     @XmlElement(name = "student")

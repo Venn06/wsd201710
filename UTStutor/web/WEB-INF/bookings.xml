@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bookings>
+<bookings
+    xmlns="http://www.uts.edu.au/31284/wsd-bookings"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-bookings bookings.xsd"
+>
     <booking id="0">
-        <tutorEmail>tutorEmail</tutorEmail>
-        <tutorName>tutorName</tutorName>
-        <subjectName>subjectName</subjectName>
-        <studentEmail>studentEmail</studentEmail>
-        <studentName>studentName</studentName>
-        <status>status</status>
+        <tutorEmail>FakeEmail@fake.email</tutorEmail>
+        <tutorName>Fake Name</tutorName>
+        <subjectName>WSD</subjectName>
+        <studentEmail>FakeEmail2@fake.email</studentEmail>
+        <studentName>Fake Nameb</studentName>
+        <status>completed</status>
     </booking>
 </bookings>

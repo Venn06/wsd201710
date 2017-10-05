@@ -5,9 +5,12 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 
-<xs:schema version="1.0"
-           xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           elementFormDefault="qualified">
+<xs:schema  
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.uts.edu.au/31284/wsd-tutors"
+    xmlns="http://www.uts.edu.au/31284/wsd-tutors"
+    elementFormDefault="qualified"
+>
     <!-- Type Declarations -->
     <xs:simpleType name="email">
         <xs:restriction base="xs:string">
@@ -21,12 +24,12 @@ and open the template in the editor.
     </xs:simpleType>
     <xs:simpleType name="password">
         <xs:restriction base="xs:string">
-            <xs:pattern value=".[6,16]"/>
+            <xs:pattern value=".{6,16}"/>
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="date">
         <xs:restriction base="xs:string">
-            <xs:pattern value="\d{1,2}/\d{1,2}/\d{1,4}"/>
+            <xs:pattern value="\d{1,4}-\d{2}-\d{2}"/>
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="subject">
