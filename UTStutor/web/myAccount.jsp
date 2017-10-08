@@ -29,11 +29,11 @@
         
 %>
 <page title="My Account" h1="Welcome,<%=user.getType()%> <%=user.getName()%>">
-        <details>
-            <% for(int i = 0; i < user.getDetails().length; i=i+2){%>
-            <detail name="<%=user.getDetails()[i]%>" value="<%=user.getDetails()[i+1]%>"/>
-            <%}%>           
-        </details>
+    <details>
+        <% for(int i = 0; i < user.getDetails().length; i=i+2){%>
+        <detail name="<%=user.getDetails()[i]%>" value="<%=user.getDetails()[i+1]%>"/>
+        <%}%>           
+    </details>
     <form action="myAccount.jsp" method="POST">
         <inputs>
             <input type="name" name="name" value="<%=user.getName()%>"/>
@@ -42,9 +42,8 @@
             <input type="submit" value="Save"/>
         </inputs>
     </form>
-    <%if(user.getType() == UserType.Student){%>
-            <link page="cancelAccount"/>
-    <%}%>
+
+    <link page="cancelAccount"/>
     <link page="main"/>
 </page>
 

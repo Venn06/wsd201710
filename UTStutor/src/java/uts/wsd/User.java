@@ -5,16 +5,14 @@
  */
 package uts.wsd;
 
-
-
 /**
  *
  * @author Vennwen
  */
 public abstract class User {
-    
+
     public abstract String[] getDetails();
-    
+
     public abstract String getName();
 
     public abstract void setName(String name);
@@ -24,27 +22,27 @@ public abstract class User {
     public abstract void setEmail(String email);
 
     public abstract String getPassword();
-    
+
     public abstract void setPassword(String password);
 
     public abstract String getDOB();
 
     public abstract void setDOB(String DOB);
-    
-    public String getSubject(){
+
+    public String getSubject() {
         return null;
     }
 
-    public void setSubject(String subject){
-    
+    public void setSubject(String subject) {
+
     }
 
-    public  String getStatus(){
+    public String getStatus() {
         return null;
     }
 
-    public  void setStatus(String status){
+    public void setStatus(String status) {
     }
-   
-    public  abstract UserType getType();
+
+    public abstract UserType getType();
 }

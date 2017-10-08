@@ -26,6 +26,7 @@
         else if(user.getType() == UserType.Tutor){
             diaryApp.removeTutor(user.getEmail());
         }
+        session.invalidate();
         
 %>
 <page title="Cancel Account" h1="Your account has been cancelled">

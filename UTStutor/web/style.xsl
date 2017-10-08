@@ -18,7 +18,8 @@
     
     <xsl:template match="page">
         <html>
-            <head>           
+            <head>
+                <link rel="stylesheet" href="styles.css"/>
                 <title>
                     <xsl:value-of select="@title"/>
                 </title>
@@ -84,7 +85,7 @@
                 <xsl:value-of select="@name"/>
             </th>
             <td>
-                <select name="{@name}">
+                <select name="{@name}" style="{@style}" id="{@id}" onchange="{@onchange};">
                     <xsl:apply-templates></xsl:apply-templates>
                 </select>
             </td>
@@ -144,7 +145,13 @@
     <xsl:template match="bookings">
         <table>
             <tr>
-                <th>Subject</th><th>Tutor Name</th><th>Tutor Email</th><th>Student Name</th><th>Student Email</th><th>Status</th><th>Action</th>
+                <th>Subject</th>
+                <th>Tutor Name</th>
+                <th>Tutor Email</th>
+                <th>Student Name</th>
+                <th>Student Email</th>
+                <th>Status</th>
+                <th>Action</th>
             </tr>
             <xsl:apply-templates/>
         </table>
@@ -165,17 +172,23 @@
             </xsl:when>
             <xsl:when test="@status='active' and @userType='Tutor'">
                 <td>
-                    <a href="booking.jsp?action=cancel&amp;bookingID={@bookingID}">Cancel</a><br/>
+                    <a href="booking.jsp?action=cancel&amp;bookingID={@bookingID}">Cancel</a>
+                    <br/>
                     <a href="booking.jsp?action=complete&amp;bookingID={@bookingID}">Complete</a>
                 </td>
             </xsl:when>
             <xsl:when test="@status='active' and @userType='Student'">
                 <td>
-                    <a href="booking.jsp?action=cancel&amp;bookingID={@bookingID}">Cancel</a><br/>                    
+                    <a href="booking.jsp?action=cancel&amp;bookingID={@bookingID}">Cancel</a>
+                    <br/>                    
                 </td>
             </xsl:when>            
         </xsl:choose>
     </xsl:template>
     
-    
+    <xsl:template match="script" >
+        <script type="text/javascript">
+            <xsl:value-of select="@content"/>
+        </script>
+    </xsl:template>
 </xsl:stylesheet>

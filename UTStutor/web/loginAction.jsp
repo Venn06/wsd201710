@@ -43,7 +43,7 @@
     }
     else{
 %>
-<page title="LoginAction Page" h1="Login unsuccessfully">
+<page title="LoginAction Page" h1="Login unsuccessfully。 Invalid email or password">
     <link page="index"/>
 </page>
 <%

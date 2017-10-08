@@ -9,6 +9,6 @@ package uts.wsd;
  *
  * @author Vennwen
  */
-public enum UserType{
+public enum UserType {
     Tutor, Student
 }

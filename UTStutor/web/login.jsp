@@ -11,9 +11,10 @@
 
     <form action="loginAction.jsp" method="POST">
         <inputs>
-        <input type="email" name="email"/>
-        <input type="password" name="password"/>
-        <input type="submit" value="Login"/>
+            <input type="email" name="email"/>
+            <input type="password" name="password"/>
+            <input type="submit" value="Login"/>
         </inputs>
     </form>    
+    <link page="index"/>
 </page>

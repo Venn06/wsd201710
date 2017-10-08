@@ -14,17 +14,18 @@ import javax.xml.bind.annotation.*;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Student extends User implements Serializable{
+public class Student extends User implements Serializable {
+
     @XmlElement
     private String email;
     private String name;
     private String password;
     private String DOB;
-    
-    public Student(){
-        
+
+    public Student() {
+
     }
-    
+
     public Student(String email, String name, String password, String DOB) {
         this.email = email;
         this.name = name;
@@ -65,12 +66,11 @@ public class Student extends User implements Serializable{
         this.DOB = DOB;
     }
 
- 
     public UserType getType() {
         return UserType.Student;
     }
-    
-    public String[] getDetails(){
-        return new String[] {"Email", this.email, "Name", this.name,"Password", this.password, "DOB", this.DOB};
+
+    public String[] getDetails() {
+        return new String[]{"Email", this.email, "Name", this.name, "Password", this.password, "DOB", this.DOB};
     }
 }

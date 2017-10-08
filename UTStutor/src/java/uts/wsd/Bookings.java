@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.*;
  * @author Vennwen
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name = "bookings", namespace="http://www.uts.edu.au/31284/wsd-bookings")
+@XmlRootElement(name = "bookings", namespace = "http://www.uts.edu.au/31284/wsd-bookings")
 public class Bookings implements Serializable {
 
     @XmlElement(name = "booking")
@@ -36,11 +36,13 @@ public class Bookings implements Serializable {
         this.list = list;
     }
 
-    public void addBooking(Tutor tutor, Student student) {
+    public boolean addBooking(Tutor tutor, Student student) {
         int id = list.size();
         if (tutor.getStatus().equals("available")) {
             this.addBooking(new Booking(id, tutor, student));
+            return true;
         }
+        return false;
 
     }
 
@@ -48,20 +50,24 @@ public class Bookings implements Serializable {
         list.add(booking);
     }
 
-    public void cancelBooking(int bookingID) {
+    public boolean cancelBooking(int bookingID) {
         for (Booking booking : list) {
             if (booking.getBookingID() == bookingID) {
                 booking.setStatus("cancelled");
+                return true;
             }
         }
+        return false;
     }
 
-    public void completeBooking(int bookingID) {
+    public boolean completeBooking(int bookingID) {
         for (Booking booking : list) {
             if (booking.getBookingID() == bookingID) {
                 booking.setStatus("completed");
+                return true;
             }
         }
+        return false;
     }
 
     public Booking getBooking(int bookingID) {
@@ -81,7 +87,7 @@ public class Bookings implements Serializable {
             String studentEmail,
             String studentName,
             String status) {
-        
+
         ArrayList bookings = new ArrayList<Booking>();
         for (Booking booking : list) {
             if (id != -1 && id != booking.getBookingID()) {

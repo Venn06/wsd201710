@@ -8,18 +8,27 @@
     Author     : Vennwen
 --%>
 <page title="Register" h1="UTS Tutor | Register">
-
+    <script content="function userType(type) {
+            var usertype = document.getElementById('User Type');
+            var subject = document.getElementById('subject');
+            if (type === 'Tutor') {
+                subject.style.display = 'block';
+            } else {
+                subject.style.display = 'none';
+            }
+        }">
+    </script>
     <form action="welcome.jsp" method="POST">
         <inputs>
             <input type="email" name="email"/>
             <input type="name" name="name"/>
             <input type="password" name="password"/>
             <input type="date" name="DOB"/>
-            <select name="User Type">
+            <select onchange="userType(this.value)" name="User Type" id="User Type">
                 <option name="Tutor"/>
                 <option name="Student"/>
             </select>
-            <select name="subject">
+            <select id="subject" name="subject" style="display: block">
                 <option name="WSD"/>
                 <option name="USP"/>
                 <option name="AppProg"/>
@@ -28,5 +37,6 @@
             </select>
             <input type="Submit" value="Register"/>
         </inputs>
-    </form>    
+    </form> 
+    <link page="index"/>
 </page>

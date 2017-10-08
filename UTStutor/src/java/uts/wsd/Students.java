@@ -13,14 +13,14 @@ import javax.xml.bind.annotation.*;
  *
  * @author Vennwen
  */
-
-@XmlRootElement(name = "students", namespace="http://www.uts.edu.au/31284/wsd-students")
+@XmlRootElement(name = "students", namespace = "http://www.uts.edu.au/31284/wsd-students")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Students implements StudentsDAO, Serializable{
+public class Students implements Serializable {
+
     @XmlElement(name = "student")
     private ArrayList<Student> list;
-    
-    public Students(){
+
+    public Students() {
         this.list = new ArrayList<Student>();
     }
 
@@ -31,32 +31,30 @@ public class Students implements StudentsDAO, Serializable{
     public void setList(ArrayList<Student> list) {
         this.list = list;
     }
-    
-    @Override    
-    public void addStudent(Student student){
+
+    public void addStudent(Student student) {
         list.add(student);
     }
-    
-    public Student getStudent(String email){
-        for(Student student: list){
-            if(student.getEmail().equals(email)){
-                return student;
-            }
-        }
-        return null;
-    }
-    
-    public Student login(String email, String password){
-        for(Student student: list){
-            if(student.getEmail().equals(email) && student.getPassword().equals(password)){
+
+    public Student getStudent(String email) {
+        for (Student student : list) {
+            if (student.getEmail().equals(email)) {
                 return student;
             }
         }
         return null;
     }
 
-    
-    public void removeStudent(String email){
+    public Student login(String email, String password) {
+        for (Student student : list) {
+            if (student.getEmail().equals(email) && student.getPassword().equals(password)) {
+                return student;
+            }
+        }
+        return null;
+    }
+
+    public void removeStudent(String email) {
         list.remove(this.getStudent(email));
     }
 }

@@ -68,11 +68,11 @@
     if(user != null){
 %>
 <page title="Welcom Page" h1="Welcome,<%=user.getType()%> <%=user.getName()%>">
-        <details>
-            <% for(int i = 0; i < user.getDetails().length; i=i+2){%>
-            <detail name="<%=user.getDetails()[i]%>" value="<%=user.getDetails()[i+1]%>"/>
-            <%}%>           
-        </details>
+    <details>
+        <% for(int i = 0; i < user.getDetails().length; i=i+2){%>
+        <detail name="<%=user.getDetails()[i]%>" value="<%=user.getDetails()[i+1]%>"/>
+        <%}%>           
+    </details>
     <link page="main"/>
     <link page="logout"/>
 </page>
