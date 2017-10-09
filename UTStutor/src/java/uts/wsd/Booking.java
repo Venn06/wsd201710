@@ -11,7 +11,7 @@ import java.util.Set;
 import javax.xml.bind.annotation.*;
 
 /**
- *
+ *sadasdsadasdasdasds
  * @author Vennwen
  */
 @XmlRootElement
@@ -29,6 +29,9 @@ public class Booking implements Serializable {
     private String studentName;
     private String status;
 
+    /**
+     * Empty C
+     */
     public Booking() {
     }
 
