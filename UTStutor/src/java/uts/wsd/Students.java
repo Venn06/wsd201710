@@ -36,6 +36,11 @@ public class Students implements Serializable {
         list.add(student);
     }
 
+    /**
+     *
+     * @param email - email id
+     * @return
+     */
     public Student getStudent(String email) {
         for (Student student : list) {
             if (student.getEmail().equals(email)) {
@@ -45,6 +50,12 @@ public class Students implements Serializable {
         return null;
     }
 
+    /**
+     *
+     * @param email - email id
+     * @param password - password id
+     * @return
+     */
     public Student login(String email, String password) {
         for (Student student : list) {
             if (student.getEmail().equals(email) && student.getPassword().equals(password)) {

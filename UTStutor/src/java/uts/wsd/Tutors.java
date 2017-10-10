@@ -46,6 +46,15 @@ public class Tutors implements Serializable {
         return null;
     }
 
+    /**
+     *
+     * @param email - email id
+     * @param name - name id
+     * @param DOB - date of birth id
+     * @param subject - subject id
+     * @param status - status id
+     * @return
+     */
     public ArrayList<Tutor> searchTutors(String email, String name, String DOB, String subject, String status) {
         ArrayList<Tutor> tutors = new ArrayList<Tutor>();
         for (Tutor tutor : list) {
@@ -69,6 +78,12 @@ public class Tutors implements Serializable {
         return tutors;
     }
 
+    /**
+     *
+     * @param email - the id of email
+     * @param password - the id of password
+     * @return
+     */
     public Tutor login(String email, String password) {
         for (Tutor tutor : list) {
             if (tutor.getEmail().equals(email) && tutor.getPassword().equals(password)) {

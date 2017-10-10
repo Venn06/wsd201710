@@ -28,6 +28,9 @@ public class DiaryApplication implements Serializable, DiaryDAO {
     private Students students;
     private Tutors tutors;
 
+    /**
+     * the id of the diary application
+     */
     public DiaryApplication() {
 
     }

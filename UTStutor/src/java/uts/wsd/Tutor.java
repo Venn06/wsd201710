@@ -28,6 +28,15 @@ public class Tutor extends User implements Serializable {
 
     }
 
+    /**
+     *
+     * @param email - id of email
+     * @param name - the id of name
+     * @param password - the id of password
+     * @param DOB - the id of date of birth
+     * @param subject - the subject id
+     * @param status - the status id
+     */
     public Tutor(String email, String name, String password, String DOB, String subject, String status) {
         this.email = email;
         this.name = name;

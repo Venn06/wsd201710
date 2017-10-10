@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.*;
 
 /**
  *
- * @author Vennwen
+ *  Bookings have a arraylist to store all bookings. It has methods to add, complete, cancel and search booking.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "bookings", namespace = "http://www.uts.edu.au/31284/wsd-bookings")
@@ -70,6 +70,11 @@ public class Bookings implements Serializable {
         return false;
     }
 
+    /**
+     *
+     * @param bookingID - the id of the booking
+     * @return
+     */
     public Booking getBooking(int bookingID) {
         for (Booking booking : list) {
             if (booking.getBookingID() == bookingID) {

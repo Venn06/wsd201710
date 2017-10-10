@@ -14,6 +14,11 @@ import java.util.regex.Pattern;
  */
 public class XMLValidation {
 
+    /**
+     *
+     * @param email - the id of email
+     * @return
+     */
     public String emailValidation(String email) {
         String result = "";
         Pattern pattern = Pattern.compile("[A-Za-z0-9\\.]+@[a-z\\-]+(\\.[a-z]+)+");

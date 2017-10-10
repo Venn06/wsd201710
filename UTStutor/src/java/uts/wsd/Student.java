@@ -22,10 +22,20 @@ public class Student extends User implements Serializable {
     private String password;
     private String DOB;
 
+    /**
+     * student id
+     */
     public Student() {
 
     }
 
+    /**
+     *
+     * @param email the id of email
+     * @param name the id of name
+     * @param password the id of password
+     * @param DOB the if of date of birth
+     */
     public Student(String email, String name, String password, String DOB) {
         this.email = email;
         this.name = name;

@@ -11,8 +11,10 @@ import java.util.Set;
 import javax.xml.bind.annotation.*;
 
 /**
- *sadasdsadasdasdasds
- * @author Vennwen
+ *
+ *   Booking class has fields: id, tutorEmail, tutorName, subjectName, studentEmail, studentName and status. Also, the constructor, the getter and setters.
+Notice: we have a constructor by taking tutor and student as input so we don't need to get the details of student and tutor and then call the constructor.
+
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -30,7 +32,7 @@ public class Booking implements Serializable {
     private String status;
 
     /**
-     * Empty C
+     * Empty Constructor
      */
     public Booking() {
     }
